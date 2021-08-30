@@ -1,0 +1,457 @@
+<!--Pololu Maestro servo controller settings file, http://www.pololu.com/catalog/product/1350-->
+<UscSettings version="1">
+  <NeverSuspend>false</NeverSuspend>
+  <SerialMode>UART_FIXED_BAUD_RATE</SerialMode>
+  <FixedBaudRate>9600</FixedBaudRate>
+  <SerialTimeout>0</SerialTimeout>
+  <EnableCrc>false</EnableCrc>
+  <SerialDeviceNumber>12</SerialDeviceNumber>
+  <SerialMiniSscOffset>0</SerialMiniSscOffset>
+  <Channels MiniMaestroServoPeriod="80000" ServoMultiplier="1">
+    <!--Period = 20 ms-->
+    <!--Channel 0-->
+    <Channel name="mouth" mode="Servo" min="3648" max="8000" homemode="Off" home="3648" speed="0" acceleration="30" neutral="6000" range="1905" />
+    <!--Channel 1-->
+    <Channel name="tail left right" mode="Servo" min="1216" max="4224" homemode="Off" home="1216" speed="0" acceleration="30" neutral="2741" range="1905" />
+    <!--Channel 2-->
+    <Channel name="tail up down" mode="Servo" min="4480" max="7040" homemode="Off" home="4480" speed="0" acceleration="25" neutral="6000" range="1905" />
+    <!--Channel 3-->
+    <Channel name="head up down" mode="Servo" min="3968" max="7168" homemode="Off" home="3968" speed="0" acceleration="10" neutral="6000" range="1905" />
+    <!--Channel 4-->
+    <Channel name="head left right" mode="Servo" min="4352" max="8448" homemode="Off" home="4352" speed="0" acceleration="10" neutral="6000" range="1905" />
+    <!--Channel 5-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 6-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 7-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 8-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 9-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 10-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 11-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+  </Channels>
+  <Sequences>
+    <Sequence name="seq1">
+      <Frame name="Frame 0" duration="500">3711 3858 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 1" duration="500">3711 4224 4480 4651 6400 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 2" duration="500">8000 1843 5660 4201 6400 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 3" duration="500">3648 1216 5660 4853 6400 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 4" duration="500">3838 1931 5660 5692 7473 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 5" duration="500">7049 1931 5660 5692 7473 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 6" duration="500">3648 1931 5660 6220 7473 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 7" duration="500">3648 3464 4666 6220 7473 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 8" duration="500">3648 1683 4666 6220 7473 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 9" duration="500">3648 3917 4480 6220 7473 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 10" duration="500">5105 3917 4480 4667 7473 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 11" duration="500">3648 3917 4480 4667 7473 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 12" duration="500">6267 3917 4480 4667 7473 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 13" duration="500">3648 3917 4480 4667 7473 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 14" duration="500">6225 3917 4480 4667 7473 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 16" duration="500">3711 3858 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 15" duration="500">0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+    </Sequence>
+    <Sequence name="seq2">
+      <Frame name="Frame 0" duration="500">3711 3858 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 1" duration="500">3711 1829 5200 4915 6201 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 2" duration="500">8000 2048 6977 4915 6201 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 3" duration="500">8000 2048 6977 4915 6201 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 4" duration="500">4133 2048 6977 4915 5684 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 5" duration="500">8000 2048 6977 4216 4610 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 6" duration="500">3648 2048 5760 5334 5366 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 7" duration="500">3648 3304 4716 6158 5366 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 8" duration="500">8000 3304 4716 6158 5366 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 9" duration="500">3648 3304 4716 6158 5366 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 10" duration="500">3648 3304 4716 6344 7573 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 11" duration="500">7704 3304 4716 4853 7573 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 12" duration="500">7704 2194 4716 4418 7573 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 13" duration="500">3859 1946 4480 3968 7573 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 14" duration="500">8000 3596 4480 4449 7573 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 15" duration="500">3648 2457 4480 4449 6618 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 16" duration="500">3648 1654 4480 4449 5564 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 17" duration="500">3648 1654 4480 5909 5564 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 18" duration="500">3648 2165 4480 5785 7076 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 19" duration="500">3711 3858 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 20" duration="500">0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+    </Sequence>
+    <Sequence name="seq3">
+      <Frame name="Frame 0" duration="500">3711 3858 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 1" duration="500">3711 3858 7040 4309 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 2" duration="500">3711 3858 4480 3968 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 3" duration="500">3711 3858 4480 3968 6400 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 4" duration="500">3711 3858 7040 3968 5366 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 5" duration="500">3711 3858 7040 4698 6141 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 6" duration="500">3711 3858 4840 4698 6141 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 7" duration="500">8000 1960 4840 4698 6141 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 8" duration="500">3648 1960 4840 5459 6141 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 9" duration="500">3648 1697 4840 5863 6141 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 10" duration="500">3648 1697 7040 5863 6936 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 11" duration="500">8000 3216 4480 5241 6022 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 12" duration="500">3774 2646 4480 5241 5008 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 13" duration="500">8000 2646 4480 4993 5008 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 14" duration="500">3732 2646 4480 3968 5008 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 15" duration="500">3732 2354 4480 5552 6857 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 16" duration="500">3711 3858 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+    </Sequence>
+    <Sequence name="seq4">
+      <Frame name="Frame 0" duration="500">3711 3858 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 1" duration="500">3711 1756 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 2" duration="500">3711 3639 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 3" duration="500">3711 1902 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 4" duration="500">3711 3479 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 5" duration="500">3711 3479 4480 4294 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 6" duration="500">3711 1712 4480 4294 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 7" duration="500">3711 1712 4480 5039 6439 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 8" duration="500">3711 3683 4480 5039 6439 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 9" duration="500">3711 1435 4480 5738 5147 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 10" duration="500">3711 3975 4480 5226 6916 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 11" duration="500">8000 3274 4480 5832 5246 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 12" duration="500">3648 1610 4480 5008 4650 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 13" duration="500">8000 1610 4480 5008 4650 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 14" duration="500">8000 2866 4480 5801 7135 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 15" duration="500">3648 2866 4480 5801 7135 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 16" duration="500">3648 3187 4480 5210 6121 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 17" duration="500">3711 3858 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+    </Sequence>
+    <Sequence name="seq5">
+      <Frame name="Frame 0" duration="500">3711 3858 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 1" duration="500">8000 3858 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 2" duration="500">3648 3858 4480 7168 6181 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 3" duration="500">3648 2092 4480 7168 6181 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 4" duration="500">7852 2092 6592 7168 6181 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 5" duration="500">3648 2092 4480 7168 6181 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 6" duration="500">8000 2092 7040 7168 6181 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 7" duration="500">3648 2092 4480 6189 7672 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 8" duration="500">7281 2092 4480 6189 7672 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 9" duration="500">3648 3012 4480 3968 7672 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 10" duration="500">8000 3012 4480 3968 5942 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 11" duration="500">3648 3012 4480 3968 5942 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 12" duration="500">8000 3012 4480 3968 5942 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 13" duration="500">3648 3012 4480 3968 5465 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 14" duration="500">8000 3012 4480 5412 6240 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 15" duration="500">3648 3012 4480 5412 7215 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 16" duration="500">3648 4224 4480 7168 7215 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 17" duration="500">3648 1216 4480 7168 7215 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 18" duration="500">3648 4224 4480 7168 7215 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 19" duration="500">3648 1216 4480 7168 7215 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 20" duration="500">3648 4224 4480 7168 7215 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 21" duration="500">3648 1216 4480 3983 7215 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 22" duration="500">8000 1216 4480 3983 7215 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 23" duration="500">3648 1216 4480 3983 7215 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 24" duration="500">3648 3026 4480 6298 7215 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 25" duration="500">3711 3858 4480 5568 8149 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 26" duration="500">0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+    </Sequence>
+  </Sequences>
+  <Script ScriptDone="true">
+### Sequence subroutines: ###
+
+# seq1
+sub seq1
+  500 3711 3858 4480 5568 8149 0 
+  0 0 0 0 0 0 frame_0..11 # Frame 0
+  500 4224 4651 6400 frame_1_3_4 # Frame 1
+  500 8000 1843 5660 4201 frame_0..3 # Frame 2
+  500 3648 1216 4853 frame_0_1_3 # Frame 3
+  500 3838 1931 5692 7473 frame_0_1_3_4 # Frame 4
+  500 7049 frame_0 # Frame 5
+  500 3648 6220 frame_0_3 # Frame 6
+  500 3464 4666 frame_1_2 # Frame 7
+  500 1683 frame_1 # Frame 8
+  500 3917 4480 frame_1_2 # Frame 9
+  500 5105 4667 frame_0_3 # Frame 10
+  500 3648 frame_0 # Frame 11
+  500 6267 frame_0 # Frame 12
+  500 3648 frame_0 # Frame 13
+  500 6225 frame_0 # Frame 14
+  500 3711 3858 5568 8149 frame_0_1_3_4 # Frame 16
+  500 0 0 0 0 0 frame_0..4 # Frame 15
+  return
+# seq2
+sub seq2
+  500 3711 3858 4480 5568 8149 0 
+  0 0 0 0 0 0 frame_0..11 # Frame 0
+  500 1829 5200 4915 6201 frame_1..4 # Frame 1
+  500 8000 2048 6977 frame_0..2 # Frame 2
+  500 delay # Frame 3
+  500 4133 5684 frame_0_4 # Frame 4
+  500 8000 4216 4610 frame_0_3_4 # Frame 5
+  500 3648 5760 5334 5366 frame_0_2..4 # Frame 6
+  500 3304 4716 6158 frame_1..3 # Frame 7
+  500 8000 frame_0 # Frame 8
+  500 3648 frame_0 # Frame 9
+  500 6344 7573 frame_3_4 # Frame 10
+  500 7704 4853 frame_0_3 # Frame 11
+  500 2194 4418 frame_1_3 # Frame 12
+  500 3859 1946 4480 3968 frame_0..3 # Frame 13
+  500 8000 3596 4449 frame_0_1_3 # Frame 14
+  500 3648 2457 6618 frame_0_1_4 # Frame 15
+  500 1654 5564 frame_1_4 # Frame 16
+  500 5909 frame_3 # Frame 17
+  500 2165 5785 7076 frame_1_3_4 # Frame 18
+  500 3711 3858 5568 8149 frame_0_1_3_4 # Frame 19
+  500 0 0 0 0 0 frame_0..4 # Frame 20
+  return
+# seq3
+sub seq3
+  500 3711 3858 4480 5568 8149 0 
+  0 0 0 0 0 0 frame_0..11 # Frame 0
+  500 7040 4309 frame_2_3 # Frame 1
+  500 4480 3968 frame_2_3 # Frame 2
+  500 6400 frame_4 # Frame 3
+  500 7040 5366 frame_2_4 # Frame 4
+  500 4698 6141 frame_3_4 # Frame 5
+  500 4840 frame_2 # Frame 6
+  500 8000 1960 frame_0_1 # Frame 7
+  500 3648 5459 frame_0_3 # Frame 8
+  500 1697 5863 frame_1_3 # Frame 9
+  500 7040 6936 frame_2_4 # Frame 10
+  500 8000 3216 4480 5241 6022 frame_0..4 # Frame 11
+  500 3774 2646 5008 frame_0_1_4 # Frame 12
+  500 8000 4993 frame_0_3 # Frame 13
+  500 3732 3968 frame_0_3 # Frame 14
+  500 2354 5552 6857 frame_1_3_4 # Frame 15
+  500 3711 3858 5568 8149 frame_0_1_3_4 # Frame 16
+  return
+# seq4
+sub seq4
+  500 3711 3858 4480 5568 8149 0 
+  0 0 0 0 0 0 frame_0..11 # Frame 0
+  500 1756 frame_1 # Frame 1
+  500 3639 frame_1 # Frame 2
+  500 1902 frame_1 # Frame 3
+  500 3479 frame_1 # Frame 4
+  500 4294 frame_3 # Frame 5
+  500 1712 frame_1 # Frame 6
+  500 5039 6439 frame_3_4 # Frame 7
+  500 3683 frame_1 # Frame 8
+  500 1435 5738 5147 frame_1_3_4 # Frame 9
+  500 3975 5226 6916 frame_1_3_4 # Frame 10
+  500 8000 3274 5832 5246 frame_0_1_3_4 # Frame 11
+  500 3648 1610 5008 4650 frame_0_1_3_4 # Frame 12
+  500 8000 frame_0 # Frame 13
+  500 2866 5801 7135 frame_1_3_4 # Frame 14
+  500 3648 frame_0 # Frame 15
+  500 3187 5210 6121 frame_1_3_4 # Frame 16
+  500 3711 3858 5568 8149 frame_0_1_3_4 # Frame 17
+  return
+# seq5
+sub seq5
+  500 3711 3858 4480 5568 8149 0 
+  0 0 0 0 0 0 frame_0..11 # Frame 0
+  500 8000 frame_0 # Frame 1
+  500 3648 7168 6181 frame_0_3_4 # Frame 2
+  500 2092 frame_1 # Frame 3
+  500 7852 6592 frame_0_2 # Frame 4
+  500 3648 4480 frame_0_2 # Frame 5
+  500 8000 7040 frame_0_2 # Frame 6
+  500 3648 4480 6189 7672 frame_0_2..4 # Frame 7
+  500 7281 frame_0 # Frame 8
+  500 3648 3012 3968 frame_0_1_3 # Frame 9
+  500 8000 5942 frame_0_4 # Frame 10
+  500 3648 frame_0 # Frame 11
+  500 8000 frame_0 # Frame 12
+  500 3648 5465 frame_0_4 # Frame 13
+  500 8000 5412 6240 frame_0_3_4 # Frame 14
+  500 3648 7215 frame_0_4 # Frame 15
+  500 4224 7168 frame_1_3 # Frame 16
+  500 1216 frame_1 # Frame 17
+  500 4224 frame_1 # Frame 18
+  500 1216 frame_1 # Frame 19
+  500 4224 frame_1 # Frame 20
+  500 1216 3983 frame_1_3 # Frame 21
+  500 8000 frame_0 # Frame 22
+  500 3648 frame_0 # Frame 23
+  500 3026 6298 frame_1_3 # Frame 24
+  500 3711 3858 5568 8149 frame_0_1_3_4 # Frame 25
+  500 0 0 0 0 0 frame_0..4 # Frame 26
+  return
+
+sub frame_0..11
+  11 servo
+  10 servo
+  9 servo
+  8 servo
+  7 servo
+  6 servo
+  5 servo
+  4 servo
+  3 servo
+  2 servo
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_1_3_4
+  4 servo
+  3 servo
+  1 servo
+  delay
+  return
+
+sub frame_0..3
+  3 servo
+  2 servo
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_0_1_3
+  3 servo
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_0_1_3_4
+  4 servo
+  3 servo
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_0
+  0 servo
+  delay
+  return
+
+sub frame_0_3
+  3 servo
+  0 servo
+  delay
+  return
+
+sub frame_1_2
+  2 servo
+  1 servo
+  delay
+  return
+
+sub frame_1
+  1 servo
+  delay
+  return
+
+sub frame_0..4
+  4 servo
+  3 servo
+  2 servo
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_1..4
+  4 servo
+  3 servo
+  2 servo
+  1 servo
+  delay
+  return
+
+sub frame_0..2
+  2 servo
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_0_4
+  4 servo
+  0 servo
+  delay
+  return
+
+sub frame_0_3_4
+  4 servo
+  3 servo
+  0 servo
+  delay
+  return
+
+sub frame_0_2..4
+  4 servo
+  3 servo
+  2 servo
+  0 servo
+  delay
+  return
+
+sub frame_1..3
+  3 servo
+  2 servo
+  1 servo
+  delay
+  return
+
+sub frame_3_4
+  4 servo
+  3 servo
+  delay
+  return
+
+sub frame_1_3
+  3 servo
+  1 servo
+  delay
+  return
+
+sub frame_0_1_4
+  4 servo
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_1_4
+  4 servo
+  1 servo
+  delay
+  return
+
+sub frame_3
+  3 servo
+  delay
+  return
+
+sub frame_2_3
+  3 servo
+  2 servo
+  delay
+  return
+
+sub frame_4
+  4 servo
+  delay
+  return
+
+sub frame_2_4
+  4 servo
+  2 servo
+  delay
+  return
+
+sub frame_2
+  2 servo
+  delay
+  return
+
+sub frame_0_1
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_0_2
+  2 servo
+  0 servo
+  delay
+  return
+</Script>
+</UscSettings>

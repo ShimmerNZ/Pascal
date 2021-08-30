@@ -1,15 +1,74 @@
 #include <PololuMaestro.h>
 #include "Arduino.h"
 #include "SoftwareSerial.h"
-#include "DFRobotDFPlayerMini.h"
+#include <DFMiniMp3.h>
 
-SoftwareSerial maestroSerial(8, 9);
-SoftwareSerial mySoftwareSerial(10, 11); // RX, TX
-DFRobotDFPlayerMini myDFPlayer;
+
+class Mp3Notify
+{
+public:
+  static void PrintlnSourceAction(DfMp3_PlaySources source, const char* action)
+  {
+    if (source & DfMp3_PlaySources_Sd) 
+    {
+        Serial.print("SD Card, ");
+    }
+    if (source & DfMp3_PlaySources_Usb) 
+    {
+        Serial.print("USB Disk, ");
+    }
+    if (source & DfMp3_PlaySources_Flash) 
+    {
+        Serial.print("Flash, ");
+    }
+    Serial.println(action);
+  }
+  static void OnError(uint16_t errorCode)
+  {
+    // see DfMp3_Error for code meaning
+    Serial.println();
+    Serial.print("Com Error ");
+    Serial.println(errorCode);
+  }
+  static void OnPlayFinished(DfMp3_PlaySources source, uint16_t track)
+  {
+    Serial.print("Play finished for #");
+    Serial.println(track);  
+  }
+  static void OnPlaySourceOnline(DfMp3_PlaySources source)
+  {
+    PrintlnSourceAction(source, "online");
+  }
+  static void OnPlaySourceInserted(DfMp3_PlaySources source)
+  {
+    PrintlnSourceAction(source, "inserted");
+  }
+  static void OnPlaySourceRemoved(DfMp3_PlaySources source)
+  {
+    PrintlnSourceAction(source, "removed");
+  }
+};
+
+SoftwareSerial maestroSerial(10, 11);
+SoftwareSerial mySoftwareSerial(9, 8); // RX, TX
+DFMiniMp3<SoftwareSerial, Mp3Notify> mp3(mySoftwareSerial);
 void printDetail(uint8_t type, int value);
 MicroMaestro maestro(maestroSerial);
 const int MOTION_PIN = 2;
 long randNumber;
+
+void waitMilliseconds(uint16_t msWait)
+{
+  uint32_t start = millis();
+  
+  while ((millis() - start) < msWait)
+  {
+    // calling mp3.loop() periodically allows for notifications 
+    // to be handled without interrupts
+    mp3.loop(); 
+    delay(1);
+  }
+}
 
 void setup()
 {
@@ -17,24 +76,20 @@ void setup()
   mySoftwareSerial.begin(9600);
   randomSeed(analogRead(0));
   Serial.begin(115200);
+  mp3.begin();
   pinMode(MOTION_PIN, INPUT_PULLUP);
   Serial.println();
-  Serial.println(F("DFRobot DFPlayer Mini Demo"));
   Serial.println(F("Initializing DFPlayer ... (May take 3~5 seconds)"));
-
-  if (!myDFPlayer.begin(mySoftwareSerial)) {  //Use softwareSerial to communicate with mp3.
-    Serial.println(F("Unable to begin:"));
-    Serial.println(F("1.Please recheck the connection!"));
-    Serial.println(F("2.Please insert the SD card!"));
-    while (true) {
-      delay(0); // Code to compatible with ESP8266 watch dog.
-    }
-  }
-  Serial.println(F("DFPlayer Mini online."));
-
-  myDFPlayer.volume(1);  //Set volume value. From 0 to 30
-  myDFPlayer.EQ(5);
-  myDFPlayer.play(1);  //Play the first mp3
+  uint16_t volume = mp3.getVolume();
+  Serial.print("volume ");
+  Serial.println(volume);
+  mp3.setVolume(30);
+  
+  uint16_t count = mp3.getTotalTrackCount(DfMp3_PlaySource_Sd);
+  Serial.print("files ");
+  Serial.println(count);
+  
+  Serial.println("starting...");
 
 }
 
@@ -42,41 +97,54 @@ void loop()
 {
   int proximity = digitalRead(MOTION_PIN);
 
-  if (proximity == LOW) // If the sensor's output goes low, motion is detected
+  if (proximity == HIGH) // If the sensor's output goes low, motion is detected
   {
     randomSeed(analogRead(0));
-    randNumber = random(4);
+    randNumber = random(5);
     Serial.println(randNumber);
     if (randNumber == 0)
     {
-      Serial.println(F("Starting Caw1"));
-      maestro.restartScript(3);
-      myDFPlayer.play(3);
-      myDFPlayer.volume(10);
-      myDFPlayer.start();
-      delay(6000);
-  Serial.println(myDFPlayer.readState()); //read mp3 state
-  Serial.println(myDFPlayer.readVolume()); //read current volume
-  Serial.println(myDFPlayer.readEQ()); //read EQ setting
-  Serial.println(myDFPlayer.readFileCounts()); //read all file counts in SD card
-  Serial.println(myDFPlayer.readCurrentFileNumber()); //read current play file number
-  Serial.println(myDFPlayer.readFileCountsInFolder(3)); //read fill counts in folder SD:/03
+      Serial.println(F("Sequence 1"));
+      maestro.restartScript(1);
+      mp3.playMp3FolderTrack(1);
+      Serial.println("track 1"); 
+      delay(1000);
     }
     if (randNumber == 1)
     {
-      Serial.println(F("Starting Large Flap"));
+      Serial.println(F("Sequence 2"));
       maestro.restartScript(2);
+      delay(100);
+      mp3.playMp3FolderTrack(2);
+      Serial.println("track 2"); 
       delay(1000);
-      myDFPlayer.play(2);
-      delay(10000);
-
     }                                                   
-
-    if (randNumber > 0)
+    if (randNumber == 2)
     {
-      Serial.println(F("Starting Flap"));
-      maestro.restartScript(1);
+      Serial.println(F("Sequence 3"));
+      maestro.restartScript(3);
+      delay(100);
+      mp3.playMp3FolderTrack(3);
+      Serial.println("track 3"); 
       delay(10000);
+    } 
+        if (randNumber == 3)
+    {
+      Serial.println(F("Sequence 4"));
+      maestro.restartScript(4);
+      delay(100);
+      mp3.playMp3FolderTrack(4);
+      Serial.println("track 3"); 
+      delay(10000);
+    } 
+    if (randNumber > 3)
+    {
+      Serial.println(F("Sequence 5"));
+      maestro.restartScript(5);
+      delay(100);
+      mp3.playMp3FolderTrack(3);
+      Serial.println("track 4"); 
+      delay(1000);
     }
 
   }
